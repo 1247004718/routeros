@@ -1,5 +1,5 @@
 #!/bin/bash
-##auto install vnt linux
+##auto install vnt on linux os
 ## author : qq 1247004718
 green='\033[0;32m'
 plain='\033[0m'
