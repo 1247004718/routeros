@@ -1,6 +1,6 @@
 #!/bin/bash
 ##auto install vnt linux
-## author : 1247004718
+## author : qq 1247004718
 green='\033[0;32m'
 plain='\033[0m'
 VERSION="v1.2.12"
