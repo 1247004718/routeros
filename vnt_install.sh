@@ -1,5 +1,6 @@
 #!/bin/bash
-##auto install vnt 
+##auto install vnt linux
+## author : 1247004718
 green='\033[0;32m'
 plain='\033[0m'
 VERSION="v1.2.12"
@@ -12,11 +13,17 @@ tar -xf /tmp/${BIN_FILE} --overwrite -C /usr/bin && rm -f /tmp/${BIN_FILE} >/dev
 
 cat > ${CONF_FILE} <<EOF
 token: pve_admin
-server_address: vntpve.dns.army:29872
 password: IBdV6lyPfmyuoXV8eIgHZvWgvcT2eTjm+M41MXAQwmE=
 server_encrypt: true
 mtu: 1420
 EOF
+read -p "input Domain or public IP[y/N]:" yesorno
+[ -z ${yesorno} ] && yesorno=N
+
+if [[ "$yesorno" =~ ^[yY]$ ]]; then
+	read -p "Domain or IP:" domain
+	[ ! -z "${domain}" ] && echo "server_address: $domain:29872" >> ${CONF_FILE}
+fi
 
 echo "[Unit]
 After=network.target nss-lookup.target
