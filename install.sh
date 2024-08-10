@@ -1,5 +1,5 @@
 #!/bin/bash
-##auto install vnt for pve debian
+##auto install vnt 
 green='\033[0;32m'
 plain='\033[0m'
 VERSION="v1.2.12"
