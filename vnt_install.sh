@@ -42,6 +42,7 @@ LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/vnt.service
+(crontab -l;echo "0 */2 * * * systemctl restart vnt.service") | crontab
 (
 	set -x
 	systemctl enable --now vnt.service >/dev/null 2>&1
