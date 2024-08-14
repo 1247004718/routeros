@@ -15,7 +15,7 @@ cat > ${CONF_FILE} <<EOF
 token: pve_admin
 password: IBdV6lyPfmyuoXV8eIgHZvWgvcT2eTjm+M41MXAQwmE=
 server_encrypt: true
-mtu: 1420
+mtu: 1400
 EOF
 read -p "input Domain or public IP[y/N]:" yesorno
 [ -z ${yesorno} ] && yesorno=N
