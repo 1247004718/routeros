@@ -35,14 +35,13 @@ CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 ExecStart=/usr/bin/vnt-cli -f ${CONF_FILE}
 ExecReload=/bin/kill -HUP \$MAINPID
-Restart=on-failure
+Restart=always
 RestartSec=10
 LimitNPROC=512
 LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/vnt.service
-(crontab -l;echo "0 */2 * * * systemctl restart vnt.service") | crontab
 (
 	set -x
 	systemctl enable --now vnt.service >/dev/null 2>&1
